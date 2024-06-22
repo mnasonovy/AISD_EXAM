@@ -19,4 +19,8 @@ add_executable(sll
     single_linked_list.cc)
 target_include_directories(sll PRIVATE "${CMAKE_SOURCE_DIR}")
 
+add_executable(dll
+    double_linked_list.cc)
+target_include_directories(dll PRIVATE "${CMAKE_SOURCE_DIR}")
+
 
