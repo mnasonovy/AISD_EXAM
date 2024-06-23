@@ -27,4 +27,8 @@ add_executable(insertion_sort
     insertion_sort.cc)
 target_include_directories(insertion_sort PRIVATE "${CMAKE_SOURCE_DIR}")
 
+add_executable(shell_and_selction_sort
+    shell_and_selction_sort.cc)
+target_include_directories(shell_and_selction_sort PRIVATE "${CMAKE_SOURCE_DIR}")
+
 
