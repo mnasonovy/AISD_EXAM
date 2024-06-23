@@ -23,4 +23,8 @@ add_executable(dll
     double_linked_list.cc)
 target_include_directories(dll PRIVATE "${CMAKE_SOURCE_DIR}")
 
+add_executable(insertion_sort
+    insertion_sort.cc)
+target_include_directories(insertion_sort PRIVATE "${CMAKE_SOURCE_DIR}")
+
 

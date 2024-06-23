@@ -103,11 +103,60 @@ void equal_range_example(){
     for (auto it = res.first; it != res.second; it++) {
         cout << it->name << ":" << it->mark<< " ";
     }
+    cout << endl;
+}
+
+//Функция бинарного поиска
+template<typename T>
+int BinarySearch(T* arr, T key, size_t size) {
+    bool flag = false;
+    int left = 0;
+    int right = size - 1;
+    int mid;
+    while ((left <= right) && (flag == false)) {
+        mid = (left + right) / 2;
+        if (arr[mid] == key)
+            flag = true;
+        if (arr[mid] > key)
+            right = mid - 1;
+        else
+            left = mid + 1;
+    }
+    if (flag)
+        return mid;
+    else
+        return -1;
+}
+
+template<typename T>
+int EasilyBinarySearch(T* arr, T key, size_t size) {
+    int left = 0, right = size, mid;
+    while (left < right) {
+        mid = (left + right) / 2;
+        if (arr[mid] > key)
+            right = mid;
+        else
+            left = mid + 1;
+    }
+    right--;
+    if (arr[right] == key)
+        return right;
+    else
+        return - 1;
+}
+
+void binarysearch() {
+    int array[] = { 9,15,33,41,67,89 };
+    int size = sizeof(array) / sizeof(array[0]);
+    cout <<"Index of key by BinarySearch: "<<  BinarySearch(array, 67, size) << endl;
+    cout << "Index of key by EasilyBinarySearch: " << EasilyBinarySearch(array, 67, size) << endl;
+
 }
 
 int main() {
     bsearch_int();
     bsearch_str();
     equal_range_example();
+    binarysearch();
     return 0;
 }
