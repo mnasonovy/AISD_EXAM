@@ -31,4 +31,7 @@ add_executable(shell_and_selction_sort
     shell_and_selction_sort.cc)
 target_include_directories(shell_and_selction_sort PRIVATE "${CMAKE_SOURCE_DIR}")
 
+add_executable(bubble_shaker_quick_sort
+    bubble_shaker_quick_sort.cc)
+target_include_directories(bubble_shaker_quick_sort PRIVATE "${CMAKE_SOURCE_DIR}")
 
